@@ -1,0 +1,135 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", sans-serif;
+  background: var(--background, #18181f);
+  color: var(--foreground, #e4e4ef);
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 14px;
+}
+
+.container { display: flex; flex-direction: column; gap: 12px; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border, #2e2e3e);
+}
+
+.title-wrap { display: flex; align-items: center; gap: 10px; }
+
+.logo-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e53935, #d81b60);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.title { font-weight: 600; font-size: 14px; }
+.subtitle { font-size: 11px; color: var(--muted-foreground, #9898b0); }
+
+.pill {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--muted, #2a2a38);
+  color: var(--muted-foreground, #a0a0b8);
+}
+.pill.ok { background: rgba(52, 211, 153, 0.16); color: #34d399; }
+.pill.warn { background: rgba(251, 191, 36, 0.16); color: #fbbf24; }
+
+.banner {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: var(--foreground, #e4e4ef);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 12px;
+}
+
+.card {
+  background: var(--card, #20202b);
+  border: 1px solid var(--card-border, var(--border, #2e2e3e));
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.row-between { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.card-title { font-weight: 600; font-size: 13px; }
+.card-desc { font-size: 11px; color: var(--muted-foreground, #9898b0); margin-top: 2px; }
+
+.stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat-box { text-align: center; padding: 10px; }
+.stat-label { font-size: 11px; color: var(--muted-foreground, #9898b0); }
+.stat-value { font-size: 20px; font-weight: 700; margin-top: 2px; color: var(--primary, #60a5fa); }
+
+.switch { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; cursor: pointer; inset: 0;
+  background: var(--border, #3c3c4e); border-radius: 24px; transition: .2s;
+}
+.slider:before {
+  position: absolute; content: ""; height: 18px; width: 18px;
+  left: 3px; bottom: 3px; background: #fff; border-radius: 50%; transition: .2s;
+}
+input:checked + .slider { background: var(--primary, #3b82f6); }
+input:checked + .slider:before { transform: translateX(18px); }
+
+.form-row { display: flex; flex-direction: column; gap: 8px; }
+input[type="text"] {
+  width: 100%;
+  background: var(--background, #14141b);
+  border: 1px solid var(--border, #323244);
+  color: var(--foreground, #e4e4ef);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 12px;
+  outline: none;
+}
+input[type="text"]:focus { border-color: var(--primary, #60a5fa); }
+
+.btn-primary {
+  background: var(--primary, #3b82f6);
+  color: var(--primary-foreground, #fff);
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.92; }
+
+.dict-list { display: flex; flex-direction: column; gap: 6px; max-height: 220px; overflow-y: auto; }
+.dict-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  background: var(--background, #14141b);
+  border: 1px solid var(--border, #2e2e3e);
+  border-radius: 6px;
+  padding: 6px 9px;
+  font-size: 12px;
+}
+.dict-pair { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dict-arrow { color: var(--muted-foreground, #888); margin: 0 5px; }
+.btn-del {
+  background: transparent; border: none; color: #f87171;
+  cursor: pointer; font-size: 11px; flex-shrink: 0; padding: 2px 6px; border-radius: 4px;
+}
+.btn-del:hover { background: rgba(248, 113, 113, 0.14); }
+.empty { text-align: center; color: var(--muted-foreground, #888); font-size: 12px; padding: 12px 0; }
+
+.toast {
+  position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%);
+  background: var(--card, #111); border: 1px solid var(--primary, #60a5fa);
+  color: var(--foreground, #fff); padding: 6px 14px; border-radius: 999px; font-size: 12px;
+}

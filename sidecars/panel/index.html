@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>界面汉化设置</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/preload.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title-wrap">
+        <span class="logo-badge">汉</span>
+        <div>
+          <div class="title">Antigravity 界面汉化</div>
+          <div class="subtitle">零侵入实时 DOM 汉化引擎</div>
+        </div>
+      </div>
+      <span id="hook-status" class="pill">检测中...</span>
+    </header>
+
+    <div id="restart-banner" class="banner" hidden>
+      正在等待连接 Antigravity 主窗口（DevToolsActivePort），请稍候或点击刷新。
+    </div>
+
+    <section class="card row-between">
+      <div>
+        <div class="card-title">开启界面实时汉化</div>
+        <div class="card-desc">切换后立即热生效，关闭可秒还原英文原界面</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="toggle-enabled" checked>
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <section class="stats-row">
+      <div class="card stat-box">
+        <div class="stat-label">内置词库</div>
+        <div class="stat-value" id="builtin-count">-</div>
+      </div>
+      <div class="card stat-box">
+        <div class="stat-label">自定义词条</div>
+        <div class="stat-value" id="custom-count">-</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-title">添加 / 覆盖自定义汉化词条</div>
+      <div class="card-desc" style="margin-bottom:8px;">遇到未翻译的界面英文按钮或菜单，直接填入即可实时生效</div>
+      <div class="form-row">
+        <input id="input-en" type="text" placeholder="英文原文 (如: Scheduled Tasks)">
+        <input id="input-zh" type="text" placeholder="中文译文 (如: 定时任务)">
+        <button id="btn-add" class="btn-primary">添加</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-title" style="margin-bottom:8px;">已添加的自定义词条</div>
+      <div id="custom-list" class="dict-list">
+        <div class="empty">暂无自定义词条</div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>

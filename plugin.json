@@ -1,0 +1,12 @@
+{
+  "name": "ui-zh-cn",
+  "displayName": "界面汉化 (简体中文)",
+  "description": "零侵入实时汉化 Antigravity 客户端界面（侧边栏、设置页、菜单、插件中心与弹窗），支持侧边栏热开关与自定义词库。",
+  "version": "1.0.0",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "打开界面汉化控制面板",
+    "添加一条自定义界面汉化词条",
+    "检查汉化插件启动器状态"
+  ]
+}
