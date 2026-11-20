@@ -1,6 +1,9 @@
 {
   "command": "node",
-  "args": ["main.mjs"],
+  "args": ["--max-old-space-size=32", "--optimize-for-size", "main.mjs"],
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=32 --optimize-for-size"
+  },
   "restart_policy": "always",
   "display_name": "界面汉化设置",
   "description": "实时控制 Antigravity 简体中文界面汉化开关与自定义词库",

@@ -402,4 +402,4 @@ app.run();
 
 // Initial injection & gentle self-healing watcher (handles page reloads or new windows)
 setTimeout(() => { applyToMainWindows(false); }, 400);
-setInterval(ensureInjectedLoop, 4000);
+setInterval(ensureInjectedLoop, 60000);
